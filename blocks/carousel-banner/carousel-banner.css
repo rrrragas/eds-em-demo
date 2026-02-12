@@ -1,3 +1,4 @@
+/* Carousel Banner - AT&T dark background testimonial/award slides */
 .carousel-banner .carousel-banner-slides-container {
   position: relative;
 }
@@ -25,11 +26,14 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
   width: 100%;
-  min-height: min(50vw, calc(100dvh - var(--header-height)));
+  min-height: 300px;
+  padding: 48px 24px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .carousel-banner .carousel-banner-slide:has(.carousel-banner-slide-content[data-align='center']) {
@@ -40,6 +44,7 @@
   align-items: flex-end;
 }
 
+/* Background image */
 .carousel-banner .carousel-banner-slide .carousel-banner-slide-image picture {
   position: absolute;
   inset: 0;
@@ -51,42 +56,74 @@
   object-fit: cover;
 }
 
+/* Content overlay */
 .carousel-banner .carousel-banner-slide .carousel-banner-slide-content {
   z-index: 1;
-  margin: 68px;
-  padding: 16px;
-  color: white;
-  background-color: rgba(19 19 19 / 75%);
   position: relative;
-  width: var(--slide-content-width, auto);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+  color: var(--text-white);
 }
 
+.carousel-banner .carousel-banner-slide .carousel-banner-slide-content p {
+  margin: 0 0 12px;
+}
+
+/* Bold lead text */
+.carousel-banner .carousel-banner-slide .carousel-banner-slide-content p:first-child {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 16px;
+}
+
+/* Body text */
+.carousel-banner .carousel-banner-slide .carousel-banner-slide-content p:not(:first-child) {
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: rgba(255 255 255 / 85%);
+}
+
+/* Links in carousel */
+.carousel-banner .carousel-banner-slide .carousel-banner-slide-content a:any-link {
+  color: var(--att-cyan);
+  font-weight: 700;
+}
+
+.carousel-banner .carousel-banner-slide .carousel-banner-slide-content a:hover {
+  color: var(--text-white);
+}
+
+/* Slide indicators */
 .carousel-banner .carousel-banner-slide-indicators {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 6px 12px;
-  padding: 12px;
-  background-color: var(--light-color);
+  padding: 16px;
   line-height: 0;
 }
 
 .carousel-banner .carousel-banner-slide-indicator button {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
+  min-width: unset;
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background-color: #dadada;
-  transition: background-color 0.2s;
+  background-color: rgba(255 255 255 / 40%);
+  border: none;
+  transition: background-color var(--transition-base);
 }
 
 .carousel-banner .carousel-banner-slide-indicator button:disabled,
 .carousel-banner .carousel-banner-slide-indicator button:hover,
 .carousel-banner .carousel-banner-slide-indicator button:focus-visible {
-  background-color: var(--text-color);
+  background-color: var(--text-white);
 }
 
+/* Navigation buttons */
 .carousel-banner .carousel-banner-navigation-buttons {
   position: absolute;
   top: 50%;
@@ -104,26 +141,29 @@
   position: relative;
   width: 44px;
   height: 44px;
+  min-width: unset;
   margin: 0;
   border-radius: 50%;
   padding: 0;
-  background-color: rgba(19 19 19 / 25%);
-  transition: background-color 0.2s;
+  background-color: rgba(255 255 255 / 20%);
+  border: 1px solid rgba(255 255 255 / 40%);
+  color: var(--text-white);
+  transition: background-color var(--transition-base);
 }
 
 .carousel-banner .carousel-banner-navigation-buttons button:hover,
 .carousel-banner .carousel-banner-navigation-buttons button:focus-visible {
-  background-color: rgba(19 19 19 / 75%);
+  background-color: rgba(255 255 255 / 40%);
 }
 
 .carousel-banner .carousel-banner-navigation-buttons button::after {
   display: block;
   content: '';
-  border: 2px solid;
+  border: 2px solid var(--text-white);
   border-bottom: 0;
   border-left: 0;
-  height: 12px;
-  width: 12px;
+  height: 10px;
+  width: 10px;
   position: absolute;
   top: 50%;
   left: calc(50% + 2px);
@@ -141,13 +181,22 @@
     right: 24px;
   }
 
-  .carousel-banner .carousel-banner-slide .carousel-banner-slide-content {
-    --slide-content-width: calc((100% - 184px) / 2);
+  .carousel-banner .carousel-banner-slide {
+    min-height: 350px;
+    padding: 64px 48px;
+  }
 
-    margin: 92px;
+  .carousel-banner .carousel-banner-slide .carousel-banner-slide-content {
+    padding: 40px;
   }
 
   .carousel-banner .carousel-banner-slide .carousel-banner-slide-content[data-align='justify'] {
-    --slide-content-width: auto;
+    max-width: none;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-banner .carousel-banner-slide {
+    min-height: 400px;
   }
 }

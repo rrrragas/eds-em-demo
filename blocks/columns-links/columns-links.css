@@ -1,33 +1,65 @@
+/* Columns Links - 4-column link grid ("Looking for more?") */
 .columns-links > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.columns-links img {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
 }
 
 .columns-links > div > div {
-  order: 1;
+  padding: 0;
 }
 
-.columns-links > div > .columns-links-img-col {
-  order: 0;
+.columns-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.columns-links > div > .columns-links-img-col img {
+.columns-links ul li {
+  margin-bottom: 0;
+}
+
+.columns-links a:any-link,
+.columns-links a.button:any-link {
   display: block;
+  padding: 8px 0;
+  margin: 0;
+  min-width: unset;
+  height: auto;
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: var(--link-color);
+  text-decoration: none;
+  line-height: 1.4;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--bg-light);
+  border-radius: 0;
+  white-space: normal;
+  text-align: left;
+  transition: color var(--transition-base);
+}
+
+.columns-links a:hover,
+.columns-links a.button:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+  background: none;
+}
+
+.columns-links img {
+  display: none;
 }
 
 @media (width >= 900px) {
   .columns-links > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
   }
 
-  .columns-links > div > div {
-    flex: 1;
-    order: unset;
+  .columns-links a:any-link,
+  .columns-links a.button:any-link {
+    font-size: var(--body-font-size-s);
+    padding: 6px 0;
   }
 }

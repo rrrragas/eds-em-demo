@@ -1,27 +1,121 @@
+/* Cards Promo - promotional offer cards with image + content */
 .cards-promo > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .cards-promo > ul > li {
-  border: 1px solid #dadada;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base);
 }
 
-.cards-promo .cards-promo-card-body {
-  margin: 16px;
+.cards-promo > ul > li:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .cards-promo .cards-promo-card-image {
   line-height: 0;
+  flex: 0 0 auto;
 }
 
 .cards-promo > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+
+.cards-promo .cards-promo-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Eyebrow text (first paragraph) */
+.cards-promo .cards-promo-card-body > p:first-child {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  color: var(--att-mid-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.cards-promo .cards-promo-card-body h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--text-color);
+}
+
+.cards-promo .cards-promo-card-body p {
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: var(--text-body);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Disclaimer text (small) */
+.cards-promo .cards-promo-card-body p:nth-last-child(2) {
+  font-size: var(--body-font-size-xxs);
+  color: var(--text-muted);
+}
+
+/* CTA button */
+.cards-promo .cards-promo-card-body a.button:any-link {
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+@media (width >= 600px) {
+  .cards-promo > ul > li {
+    flex-direction: row;
+  }
+
+  .cards-promo .cards-promo-card-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .cards-promo > ul > li img {
+    aspect-ratio: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cards-promo .cards-promo-card-body {
+    padding: 32px;
+    justify-content: center;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-promo > ul {
+    gap: 32px;
+  }
+
+  .cards-promo .cards-promo-card-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+
+  .cards-promo .cards-promo-card-body {
+    padding: 40px;
+  }
+
+  .cards-promo .cards-promo-card-body h3 {
+    font-size: var(--heading-font-size-l);
+  }
 }

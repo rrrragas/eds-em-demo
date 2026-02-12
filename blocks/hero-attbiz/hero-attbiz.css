@@ -1,3 +1,8 @@
+/* Hero AT&T Business - matches source business.att.com hero */
+.hero-attbiz-container {
+  padding: 0;
+}
+
 .hero-attbiz-container .hero-attbiz-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,43 +10,156 @@
 
 .hero-attbiz {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.hero-attbiz h1,
-.hero-attbiz h2,
-.hero-attbiz h3,
-.hero-attbiz h4,
-.hero-attbiz h5,
-.hero-attbiz h6,
-.hero-attbiz p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero-attbiz.no-image * {
-  color: var(--text-color);
-}
-
+/* Background image - covers right side */
 .hero-attbiz picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero-attbiz img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  object-position: center right;
 }
 
+/* Text content area */
+.hero-attbiz > div:last-child {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 24px;
+  min-height: 350px;
+  max-width: 640px;
+}
+
+/* Eyebrow text (first paragraph before heading) */
+.hero-attbiz > div:last-child > p:first-child {
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  letter-spacing: 0;
+}
+
+/* Headings */
+.hero-attbiz h1,
+.hero-attbiz h2,
+.hero-attbiz h3,
+.hero-attbiz h4,
+.hero-attbiz h5,
+.hero-attbiz h6 {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.hero-attbiz h2 {
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+/* Body paragraphs */
+.hero-attbiz p {
+  color: var(--text-body);
+  font-size: var(--body-font-size-m);
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Disclaimer / small text */
+.hero-attbiz p em {
+  font-size: var(--body-font-size-xxs);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* CTA buttons */
+.hero-attbiz a.button:any-link {
+  margin-right: 12px;
+}
+
+.hero-attbiz a.button.secondary:any-link {
+  background-color: transparent;
+  border: 2px solid var(--att-blue);
+  color: var(--att-blue);
+}
+
+.hero-attbiz a.button.secondary:hover {
+  background-color: var(--att-blue);
+  color: var(--text-white);
+}
+
+/* List items in hero (checkmark lists) */
+.hero-attbiz ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0;
+}
+
+.hero-attbiz ul li {
+  padding: 4px 0;
+  font-size: var(--body-font-size-m);
+  color: var(--text-body);
+}
+
+/* No-image variant */
+.hero-attbiz.no-image {
+  background-color: var(--bg-light);
+}
+
+.hero-attbiz.no-image > div:last-child {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Desktop */
 @media (width >= 900px) {
   .hero-attbiz {
-    padding: 40px 32px;
+    min-height: 500px;
+    flex-direction: row;
+  }
+
+  .hero-attbiz > div:last-child {
+    padding: 64px 32px 64px 48px;
+    min-height: 500px;
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+
+  .hero-attbiz h2 {
+    font-size: var(--heading-font-size-xxl);
+  }
+
+  .hero-attbiz picture {
+    left: 40%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .hero-attbiz.no-image > div:last-child {
+    max-width: 800px;
+    padding: 80px 48px;
+  }
+}
+
+/* Large screens */
+@media (width >= 1200px) {
+  .hero-attbiz > div:last-child {
+    padding-left: calc((100vw - 1200px) / 2 + 32px);
   }
 }

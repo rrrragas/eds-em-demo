@@ -1,3 +1,4 @@
+/* Columns Offer - image + content side-by-side with checklist */
 .columns-offer > div {
   display: flex;
   flex-direction: column;
@@ -5,10 +6,12 @@
 
 .columns-offer img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .columns-offer > div > div {
   order: 1;
+  padding: 24px 0;
 }
 
 .columns-offer > div > .columns-offer-img-col {
@@ -19,15 +22,77 @@
   display: block;
 }
 
+/* Eyebrow text */
+.columns-offer > div > div > p:first-child {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  color: var(--att-mid-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+/* Heading */
+.columns-offer h2 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+/* Body text */
+.columns-offer p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* Checklist */
+.columns-offer ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0;
+}
+
+.columns-offer ul li {
+  padding: 6px 0;
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* Disclaimer */
+.columns-offer p em {
+  font-size: var(--body-font-size-xxs);
+  color: var(--text-muted);
+}
+
+/* CTA button */
+.columns-offer a.button:any-link {
+  align-self: flex-start;
+}
+
 @media (width >= 900px) {
   .columns-offer > div {
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
+    gap: 48px;
   }
 
   .columns-offer > div > div {
     flex: 1;
     order: unset;
+    padding: 0;
+  }
+
+  .columns-offer > div > .columns-offer-img-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .columns-offer img {
+    border-radius: 12px;
   }
 }

@@ -1,83 +1,122 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * AT&T Business - Edge Delivery Services
+ * Design system migrated from https://www.business.att.com/
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* AT&T Brand Colors */
+  --att-blue: #00388f;
+  --att-blue-hover: #002a6b;
+  --att-cyan: #009fdb;
+  --att-mid-blue: #0568ae;
+  --att-light-blue: #0074b3;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Text Colors */
+  --text-color: #1d2329;
+  --text-body: #454b52;
+  --text-muted: #878c94;
+  --text-white: #fff;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* Background Colors */
+  --background-color: #fff;
+  --bg-light: #f3f4f6;
+  --bg-light-blue: #f2fafd;
+  --bg-dark: #25303a;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* Border Colors */
+  --border-color: #d2d2d2;
+  --border-light: #bdc2c7;
 
-  /* nav height */
-  --nav-height: 64px;
+  /* Semantic Aliases */
+  --link-color: #0568ae;
+  --link-hover-color: #00388f;
+  --light-color: #f3f4f6;
+  --dark-color: #25303a;
+
+  /* Fonts */
+  --body-font-family: 'ATT Aleck Sans', att-aleck-sans-fallback, arial, helvetica, sans-serif;
+  --heading-font-family: 'ATT Aleck Sans', att-aleck-sans-fallback, arial, helvetica, sans-serif;
+
+  /* Body Font Sizes - mobile first */
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+  --body-font-size-xxs: 12px;
+
+  /* Heading Font Sizes - mobile first */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 30px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 22px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 18px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+
+  /* Layout */
+  --content-max-width: 1200px;
+  --nav-height: 56px;
+
+  /* Buttons */
+  --button-border-radius: 28px;
+  --button-height: 48px;
+  --button-font-size: 14px;
+  --button-min-width: 100px;
+  --button-transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 10%);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 10%);
+  --shadow-lg: 0 8px 24px rgb(0 0 0 / 12%);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Focus */
+  --focus-outline: 2px solid var(--att-blue);
+  --focus-outline-offset: 2px;
 }
 
-/* fallback fonts */
+/* Fallback font */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: att-aleck-sans-fallback;
+  size-adjust: 100%;
   src: local('Arial');
 }
 
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
+/* Desktop breakpoint */
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
+    --heading-font-size-xxl: 48px;
     --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
+    --heading-font-size-l: 26px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
+    --nav-height: 72px;
   }
 }
+
+/* ===== Base ===== */
 
 body {
   display: none;
   margin: 0;
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text-body);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.appear {
@@ -98,18 +137,22 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
+/* ===== Typography ===== */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
+  margin-top: 0.5em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  scroll-margin: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+  scroll-margin: calc(var(--nav-height) + 16px);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -125,7 +168,7 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
+  margin-top: 0.5em;
   margin-bottom: 0.25em;
 }
 
@@ -137,78 +180,99 @@ pre {
 pre {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-color);
+  background-color: var(--bg-light);
   overflow-x: auto;
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
-}
+/* ===== Links ===== */
 
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
 a:any-link {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-base);
   overflow-wrap: break-word;
 }
 
 a:hover {
   color: var(--link-hover-color);
-  text-decoration: underline;
 }
 
-/* buttons */
+a:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 2px;
+}
+
+/* ===== Buttons ===== */
+
 a.button:any-link,
 button {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: var(--button-border-radius);
+  padding: 0 32px;
+  min-width: var(--button-min-width);
+  height: var(--button-height);
   font-family: var(--body-font-family);
+  font-size: var(--button-font-size);
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--att-blue);
+  color: var(--text-white);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--button-transition);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--att-blue-hover);
   cursor: pointer;
+}
+
+a.button:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--att-blue);
+  outline-offset: 2px;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  background-color: var(--border-light);
+  color: var(--text-muted);
+  cursor: not-allowed;
 }
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: transparent;
+  border: 2px solid var(--att-blue);
+  color: var(--att-blue);
 }
+
+a.button.secondary:hover,
+a.button.secondary:focus,
+button.secondary:hover,
+button.secondary:focus {
+  background-color: var(--att-blue);
+  color: var(--text-white);
+}
+
+/* ===== Images ===== */
 
 main img {
   max-width: 100%;
@@ -227,31 +291,184 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* ===== Forms ===== */
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: border-color var(--transition-base);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--att-blue);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--att-blue);
+}
+
+/* ===== Layout ===== */
+
+main > div {
+  margin: 40px 16px;
+}
+
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: var(--spacing-xl) 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--spacing-m);
 }
 
 main > .section:first-of-type {
   margin-top: 0;
+  padding-top: 0;
 }
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0 var(--spacing-l);
+  }
+
+  main > .section {
+    padding: var(--spacing-xxl) 0;
   }
 }
 
-/* section metadata */
+/* ===== Section Variants ===== */
+
+/* Neutral - light gray */
+main .section.neutral {
+  background-color: var(--bg-light);
+}
+
+/* Light / Highlight */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+  background-color: var(--bg-light);
+}
+
+/* Accent - dark background */
+main .section.accent {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+}
+
+main .section.accent h1,
+main .section.accent h2,
+main .section.accent h3,
+main .section.accent h4,
+main .section.accent h5,
+main .section.accent h6 {
+  color: var(--text-white);
+}
+
+main .section.accent a:any-link {
+  color: var(--att-cyan);
+}
+
+main .section.accent a.button:any-link {
+  background-color: var(--text-white);
+  color: var(--att-blue);
+  border-color: transparent;
+}
+
+main .section.accent a.button:hover {
+  background-color: var(--bg-light);
+}
+
+main .section.accent a.button.secondary {
+  background-color: transparent;
+  border-color: var(--text-white);
+  color: var(--text-white);
+}
+
+main .section.accent a.button.secondary:hover {
+  background-color: var(--text-white);
+  color: var(--att-blue);
+}
+
+/* Blue */
+main .section.blue {
+  background-color: var(--att-blue);
+  color: var(--text-white);
+}
+
+main .section.blue h1,
+main .section.blue h2,
+main .section.blue h3,
+main .section.blue h4 {
+  color: var(--text-white);
+}
+
+main .section.blue a.button:any-link {
+  background-color: var(--text-white);
+  color: var(--att-blue);
+}
+
+main .section.blue a.button:hover {
+  background-color: var(--bg-light);
+}
+
+/* Light Blue */
+main .section.light-blue {
+  background-color: var(--bg-light-blue);
+}
+
+/* ===== Lists ===== */
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+
+/* ===== Blockquote ===== */
+
+blockquote {
+  border-left: 3px solid var(--att-blue);
+  padding-left: var(--spacing-s);
+  margin-left: 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* ===== Metadata block (hide from display) ===== */
+
+main .section.metadata-container {
+  display: none;
+}
+
+/* ===== HR ===== */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: var(--spacing-l) 0;
 }

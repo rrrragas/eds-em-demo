@@ -1,27 +1,101 @@
+/* Cards Value - icon/image + heading + description grid */
 .cards-value > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 .cards-value > ul > li {
-  border: 1px solid #dadada;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
   background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  transition: box-shadow var(--transition-base);
 }
 
-.cards-value .cards-value-card-body {
-  margin: 16px;
+.cards-value > ul > li:hover {
+  box-shadow: var(--shadow-sm);
 }
 
 .cards-value .cards-value-card-image {
+  flex: 0 0 48px;
   line-height: 0;
 }
 
 .cards-value > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.cards-value .cards-value-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cards-value .cards-value-card-body h3,
+.cards-value .cards-value-card-body h4 {
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.cards-value .cards-value-card-body p {
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: var(--text-body);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Disclaimer text */
+.cards-value .cards-value-card-body p:nth-last-child(2) {
+  font-size: var(--body-font-size-xxs);
+  color: var(--text-muted);
+}
+
+/* Learn more link */
+.cards-value .cards-value-card-body p:last-child a {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.cards-value .cards-value-card-body p:last-child a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+@media (width >= 600px) {
+  .cards-value > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-value > ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .cards-value > ul > li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+  }
+
+  .cards-value .cards-value-card-image {
+    flex: 0 0 auto;
+    margin-bottom: 8px;
+  }
 }

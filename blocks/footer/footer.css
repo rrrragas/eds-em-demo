@@ -1,20 +1,66 @@
+/* AT&T Business Footer */
 footer {
-  background-color: var(--light-color);
+  background-color: var(--bg-dark);
+  color: rgba(255 255 255 / 80%);
   font-size: var(--body-font-size-xs);
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 48px 24px 32px;
 }
 
 footer .footer p {
+  margin: 0 0 8px;
+  color: rgba(255 255 255 / 70%);
+}
+
+footer .footer a:any-link {
+  color: rgba(255 255 255 / 80%);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+footer .footer a:hover {
+  color: var(--text-white);
+  text-decoration: underline;
+}
+
+footer .footer img {
+  max-width: 148px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 16px;
+}
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+footer .footer ul li {
+  padding: 4px 0;
   margin: 0;
+}
+
+footer .footer h2,
+footer .footer h3,
+footer .footer h4 {
+  color: var(--text-white);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+footer .footer hr {
+  border-color: rgba(255 255 255 / 20%);
+  margin: 24px 0;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 48px 32px 32px;
   }
 }
