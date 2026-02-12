@@ -43,7 +43,7 @@
 }
 
 /* Eyebrow text (first paragraph before heading) */
-.hero-attbiz > div:last-child > p:first-child {
+.hero-attbiz > div:last-child > div > p:first-child {
   font-size: var(--heading-font-size-s);
   font-weight: 400;
   color: var(--text-color);
