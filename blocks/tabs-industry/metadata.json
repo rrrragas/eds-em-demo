@@ -1,0 +1,38 @@
+{
+  "variantName": "tabs-industry",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-02-12T05:03:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "industry-solutions",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab-label + icon + image + description + link",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "industry solution showcases",
+      "vertical market tabs",
+      "categorized content with images"
+    ],
+    "notSuitableFor": [
+      "simple text-only tabs",
+      "FAQ sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-12T05:03:00.000Z"
+  }
+}

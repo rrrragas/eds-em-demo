@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-offer",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-12T05:03:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "offer-panel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + eyebrow + heading + body + checklist + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "offer panels with image and text",
+      "feature highlight with checklist",
+      "side-by-side content with image"
+    ],
+    "notSuitableFor": [
+      "multi-column data layouts",
+      "link collections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-12T05:03:00.000Z"
+  }
+}
