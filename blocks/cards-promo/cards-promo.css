@@ -11,15 +11,15 @@
 .cards-promo > ul > li {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  border-radius: 12px;
+  background-color: var(--bg-dark);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   transition: box-shadow var(--transition-base);
 }
 
 .cards-promo > ul > li:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .cards-promo .cards-promo-card-image {
@@ -43,26 +43,27 @@
 /* Eyebrow text (first paragraph) */
 .cards-promo .cards-promo-card-body > p:first-child {
   font-size: var(--body-font-size-xs);
-  font-weight: 700;
-  color: var(--att-mid-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 400;
+  color: var(--text-white);
+  text-transform: none;
+  letter-spacing: normal;
   margin-bottom: 8px;
 }
 
 .cards-promo .cards-promo-card-body h3 {
   font-size: var(--heading-font-size-l);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 12px;
-  color: var(--text-color);
+  color: var(--text-white);
+  letter-spacing: -0.03em;
 }
 
 .cards-promo .cards-promo-card-body p {
   font-size: var(--body-font-size-s);
   line-height: 1.5;
-  color: var(--text-body);
+  color: rgba(255 255 255 / 80%);
   margin-top: 0;
   margin-bottom: 8px;
 }
@@ -70,13 +71,21 @@
 /* Disclaimer text (small) */
 .cards-promo .cards-promo-card-body p:nth-last-child(2) {
   font-size: var(--body-font-size-xxs);
-  color: var(--text-muted);
+  color: rgba(255 255 255 / 60%);
 }
 
-/* CTA button */
+/* CTA button - light blue bg with dark blue text (matches source) */
 .cards-promo .cards-promo-card-body a.button:any-link {
   align-self: flex-start;
   margin-top: 16px;
+  background-color: var(--bg-light-blue);
+  color: var(--att-blue);
+  border-color: transparent;
+}
+
+.cards-promo .cards-promo-card-body a.button:hover {
+  background-color: var(--background-color);
+  color: var(--att-blue);
 }
 
 @media (width >= 600px) {
@@ -116,6 +125,6 @@
   }
 
   .cards-promo .cards-promo-card-body h3 {
-    font-size: var(--heading-font-size-l);
+    font-size: 34px;
   }
 }

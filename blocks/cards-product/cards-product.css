@@ -31,9 +31,9 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  background-color: var(--bg-light-blue);
+  border: none;
+  border-radius: 16px;
   overflow: hidden;
   transition: box-shadow var(--transition-base);
 }
@@ -89,8 +89,8 @@
 }
 
 .cards-product .cards-product-card-body a {
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
+  font-size: var(--button-font-size);
+  font-weight: 400;
   color: var(--link-color);
   text-decoration: none;
 }

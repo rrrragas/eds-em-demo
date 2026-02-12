@@ -45,7 +45,7 @@
 
   /* Heading Font Sizes - mobile first */
   --heading-font-size-xxl: 36px;
-  --heading-font-size-xl: 30px;
+  --heading-font-size-xl: 32px;
   --heading-font-size-l: 24px;
   --heading-font-size-m: 22px;
   --heading-font-size-s: 20px;
@@ -96,7 +96,7 @@
 @media (width >= 900px) {
   :root {
     --heading-font-size-xxl: 48px;
-    --heading-font-size-xl: 36px;
+    --heading-font-size-xl: 48px;
     --heading-font-size-l: 26px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 20px;
@@ -161,6 +161,18 @@ h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
+
+/* AT&T uses bold font file (attAleckSans-Bold) with font-weight: 400.
+   EDS markdown wraps headings in <strong>, which adds unwanted extra weight.
+   Neutralize so headings rely on font-weight: 700 from the heading rule only. */
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: inherit;
+}
 
 p,
 dl,

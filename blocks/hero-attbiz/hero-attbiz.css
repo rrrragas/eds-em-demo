@@ -44,11 +44,12 @@
 
 /* Eyebrow text (first paragraph before heading) */
 .hero-attbiz > div:last-child > p:first-child {
-  font-size: var(--body-font-size-s);
+  font-size: var(--heading-font-size-s);
   font-weight: 400;
   color: var(--text-color);
   margin-bottom: 8px;
   letter-spacing: 0;
+  line-height: 1.05;
 }
 
 /* Headings */
