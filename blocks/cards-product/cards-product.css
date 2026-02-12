@@ -82,22 +82,31 @@
   color: var(--text-color);
 }
 
-/* Learn more link */
+/* Learn more button */
 .cards-product .cards-product-card-body p:last-child {
   margin-top: auto;
   padding-top: 16px;
 }
 
 .cards-product .cards-product-card-body a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  height: var(--button-height);
+  border-radius: var(--button-border-radius);
   font-size: var(--button-font-size);
   font-weight: 400;
-  color: var(--link-color);
+  color: var(--text-white);
+  background-color: var(--att-blue);
   text-decoration: none;
+  transition: var(--button-transition);
 }
 
 .cards-product .cards-product-card-body a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
+  background-color: var(--att-blue-hover);
+  color: var(--text-white);
+  text-decoration: none;
 }
 
 @media (width >= 600px) {
